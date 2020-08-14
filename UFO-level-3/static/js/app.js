@@ -26,23 +26,29 @@ form.on("submit", runEnter);
 function runEnter(){
     d3.event.preventDefault();
     var dateValue = d3.select("#datetime").property("value");
-    var cityValue = d3.select("#city").property("value");
-    var stateValue = d3.select("#state").property("value");
-    var countryValue = d3.select("#country").property("value");
-    var shapeValue = d3.select("#shape").property("value");
+    var cityValue = String(d3.select("#city").node().value).toLowerCase();
+    // var stateValue = d3.select("#state").property("value");
+    // var countryValue = d3.select("#country").property("value");
+    // var shapeValue = d3.select("#shape").property("value");
 
     console.log(dateValue);
     console.log(cityValue);
-    console.log(stateValue);
-    console.log(countryValue);
-    console.log(shapeValue);
+    // console.log(stateValue);
+    // console.log(countryValue);
+    // console.log(shapeValue);
+
+    // var filteredData = tableData.filter(row => {
+    //     if((row.datetime == dateValue || dateValue == "") &&
+    //         (row.city == cityValue || cityValue == "") &&
+    //         (row.state == stateValue || stateValue == "") &&
+    //         (row.country == countryValue || countryValue == "") &&
+    //         (row.shape == shapeValue || shapeValue == "")) {
+    //         return true}
+    // });
 
     var filteredData = tableData.filter(row => {
-        if((row.datetime == dateValue || dateValue == "") &&
-            (row.city == cityValue || cityValue == "") &&
-            (row.state == stateValue || stateValue == "") &&
-            (row.country == countryValue || countryValue == "") &&
-            (row.shape == shapeValue || shapeValue == "")) {
+        if((row.datetime == dateValue || dateValue == "") &
+            (row.city == cityValue || cityValue == "")) {
             return true}
     });
 
