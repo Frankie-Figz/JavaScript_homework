@@ -36,84 +36,43 @@
                         <li class="filter list-group-item">
                             <label for="date">Enter a Date</label>
                             <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
-                          </li>
-                          <li class = "list-group-item">
-                            <h5 class = "card-title">City</h5>
-                            <label for="city">Choose a car:</label>
-
-                            <select name="city" id="city">
-                              <option value="">Empty</option>
-                              <option value="Benton">Benton</option>
-                              <option value="Bonita">Bonita</option>
-                            </select> 
-                          </li>
-                          <li class = "list-group-item">
-                            <h5 class = "card-title">State</h5>
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
-                                <div class="dropdown-menu">
-                                  <a class="dropdown-item" href="#">Action</a>
-                                  <a class="dropdown-item" href="#">Another action</a>
-                                  <a class="dropdown-item" href="#">Something else here</a>
-                                  <input type="button" placeholder="round">
-                                </div>
-                              </div>
-                              <input type="text" class="form-control" aria-label="Text input with dropdown button">
-                            </div>
-                          </li>
-                          <li class = "list-group-item">
-                            <h5 class = "card-title">Country</h5>
-                            <div class="dropdown">
-                              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Country
-                              </button>
-                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">sphere</a>
-                                <a class="dropdown-item" href="#">triangle</a>
-                                <a class="dropdown-item" href="#">rectangle</a>
-                              </div>
-                            </div>
-                          </li>
-                            <li class = "list-group-item">
-                              <h5 class = "card-title">Shape</h5>
-                              <div class="dropdown">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                  Shape
-                                </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                  <a class="dropdown-item" href="#">sphere</a>
-                                  <a class="dropdown-item" href="#">triangle</a>
-                                  <a class="dropdown-item" href="#">rectangle</a>
-                                </div>
-                              </div>
-                            </li>
-                          <li class = "list-group-item">
-                            <h5 class = "card-title">another header</h5>
-                            <div class="dropdown">
-                              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown button
-                              </button>
-                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">sphere</a>
-                                <a class="dropdown-item" href="#">triangle</a>
-                                <a class="dropdown-item" href="#">rectangle</a>
-                              </div>
-                            </div>
-                          </li>
-                          <li class = "list-group-item">
-                            <h5 class = "card-title">another header</h5>
-                            <div class="dropdown">
-                              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Dropdown button
-                              </button>
-                              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">sphere</a>
-                                <a class="dropdown-item" href="#">triangle</a>
-                                <a class="dropdown-item" href="#">rectangle</a>
-                              </div>
-                            </div>
-                          </li>
+                        </li>
+                        <li class = "list-group-item">
+                          <h5 class = "card-title">City</h5>
+                          <label for="city">Choose a city:</label>
+                          <select name="city" id="city" onchange="getdata(this.value)">
+                            <option value="">Empty</option>
+                            <option value="Benton">Benton</option>
+                            <option value="Bonita">Bonita</option>
+                          </select> 
+                        </li>
+                        <li class = "list-group-item">
+                          <h5 class = "card-title">State</h5>
+                          <label for="state">Choose a state:</label>
+                          <select name="state" id="state">
+                            <option value="">empty</option>
+                            <option value="California">ca</option>
+                            <option value="Arkansas">ar</option>
+                          </select> 
+                        </li>
+                        <li class = "list-group-item">
+                          <h5 class = "card-title">Country</h5>
+                          <label for="country">Choose a country:</label>
+                          <select name="country" id="country">
+                            <option value="">empty</option>
+                            <option value="USA">USA</option>
+                            <option value="Canada">Canada</option>
+                          </select> 
+                        </li>
+                        <li class = "list-group-item">
+                          <h5 class = "card-title">Shape</h5>
+                          <label for="shape">Choose a shape:</label>
+                          <select name="shape" id="shape">
+                            <option value="">empty</option>
+                            <option value="circle">circle</option>
+                            <option value="triangle">triangle</option>
+                          </select> 
+                        </li>
                     </ul>
                   </div>
                   <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
