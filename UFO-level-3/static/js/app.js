@@ -104,7 +104,7 @@ form.on("submit", runEnter);
 cityFilter.on("change",runEnter )
 
 function runEnter(){
-    d3.event.preventDefault();
+    //d3.event.preventDefault();
     var dateValue = d3.select("#datetime").property("value");
     var cityValue = String(d3.select("#city").node().value).toLowerCase();
     var stateValue = String(d3.select("#state").node().value).toLowerCase();
