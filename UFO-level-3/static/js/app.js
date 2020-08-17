@@ -48,6 +48,7 @@ function updateCityList(uniqueCity){
     //d3.event.preventDefault();
     console.log(d3.select("#city"))
     d3.select("#city").selectAll("option").remove()
+    d3.select('#city').append("option").text("empty");
     uniqueCity.forEach(function(city){
         var row = d3.select("#city");
         row.append("option").text(city);
@@ -58,6 +59,7 @@ function updateStateList(uniqueState){
     //d3.event.preventDefault();
     console.log(d3.select("#state"))
     d3.select("#state").selectAll("option").remove()
+    d3.select('#state').append("option").text("empty");
     uniqueState.forEach(function(state){
         var row = d3.select("#state");
         row.append("option").text(state);
@@ -68,6 +70,7 @@ function updateCountryList(uniqueCountry){
     //d3.event.preventDefault();
     console.log(d3.select("#country"))
     d3.select("#country").selectAll("option").remove()
+    d3.select('#country').append("option").text("empty");
     uniqueCountry.forEach(function(country){
         var row = d3.select("#country");
         row.append("option").text(country);
@@ -79,6 +82,7 @@ function updateShapeList(uniqueShape){
     //d3.event.preventDefault();
     console.log(d3.select("#shape"))
     d3.select("#shape").selectAll("option").remove()
+    d3.select('#shape').append("option").text("empty");
     uniqueShape.forEach(function(shape){
         var row = d3.select("#shape");
         row.append("option").text(shape);
@@ -103,6 +107,9 @@ function runEnter(){
     d3.event.preventDefault();
     var dateValue = d3.select("#datetime").property("value");
     var cityValue = String(d3.select("#city").node().value).toLowerCase();
+    var stateValue = String(d3.select("#state").node().value).toLowerCase();
+    var countryValue = String(d3.select("#country").node().value).toLowerCase();
+    var shapeValue = String(d3.select("#shape").node().value).toLowerCase();
     // var stateValue = d3.select("#state").property("value");
     // var countryValue = d3.select("#country").property("value");
     // var shapeValue = d3.select("#shape").property("value");
@@ -123,8 +130,11 @@ function runEnter(){
     // });
 
     var filteredData = tableData.filter(row => {
-        if((row.datetime == dateValue || dateValue == "") &
-            (row.city == cityValue || cityValue == "")) {
+        if((row.datetime == dateValue || dateValue == "") &&
+            (row.city == cityValue || cityValue == "empty") &&
+            (row.state == stateValue || stateValue == "empty") &&
+            (row.country == countryValue || countryValue == "empty") &&
+            (row.shape == shapeValue || shapeValue == "empty")) {
             return true}
     });
 
