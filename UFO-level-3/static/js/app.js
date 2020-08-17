@@ -10,23 +10,39 @@ var stateList = tableData.map(function(row){
     return row.state
 })
 
+var countryList = tableData.map(function(row){
+    return row.country
+})
+
+
+var shapeList = tableData.map(function(row){
+    return row.shape
+})
+
+
 var uniqueCity = Array.from(new Set(cityList));
 var uniqueState = Array.from(new Set(stateList));
+var uniqueCountry = Array.from(new Set(countryList));
+var uniqueShape = Array.from(new Set(shapeList));
 console.log(uniqueCity);
 console.log(uniqueState);
+console.log(uniqueCountry);
+console.log(uniqueShape);
 // YOUR CODE HERE!
 //select tbody the location to add the table
 
 var tbody = d3.select("tbody");
 
-var selectCity = d3.select("#city").node();
+var selectCity = d3.select("#city");
 
-var cityValue = selectCity.value
 console.log("here");
 console.log(selectCity);
 console.log("here1");
 console.log(d3.select("#city").selectAll("option"))
 updateCityList(uniqueCity);
+updateStateList(uniqueState);
+updateCountryList(uniqueCountry);
+updateShapeList(uniqueShape);
 
 function updateCityList(uniqueCity){
     //d3.event.preventDefault();
@@ -35,10 +51,41 @@ function updateCityList(uniqueCity){
     uniqueCity.forEach(function(city){
         var row = d3.select("#city");
         row.append("option").text(city);
-        var test = row.select("option")
-        console.log(test)
     })
 }
+
+function updateStateList(uniqueState){
+    //d3.event.preventDefault();
+    console.log(d3.select("#state"))
+    d3.select("#state").selectAll("option").remove()
+    uniqueState.forEach(function(state){
+        var row = d3.select("#state");
+        row.append("option").text(state);
+    })
+}
+
+function updateCountryList(uniqueCountry){
+    //d3.event.preventDefault();
+    console.log(d3.select("#country"))
+    d3.select("#country").selectAll("option").remove()
+    uniqueCountry.forEach(function(country){
+        var row = d3.select("#country");
+        row.append("option").text(country);
+    })
+}
+
+
+function updateShapeList(uniqueShape){
+    //d3.event.preventDefault();
+    console.log(d3.select("#shape"))
+    d3.select("#shape").selectAll("option").remove()
+    uniqueShape.forEach(function(shape){
+        var row = d3.select("#shape");
+        row.append("option").text(shape);
+    })
+}
+
+
 
 var button = d3.select("#filter-btn");
 
